@@ -1,0 +1,93 @@
+/*맨 위 헤더부분  -------------------------------------------------*/
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100dvw;
+  height: 40px;
+  padding-left: var(--header-padding);
+  padding-right: var(--header-padding);
+  background: #f5f5f5;
+}
+
+.header-left-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-right-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/*고객센터 마우스 오버시 드롭다운 리스트 보이기*/
+/*여기에 마우스 호버되면 고객센터 드롭다운 메뉴 나옴*/
+.header-help {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*리스트를 감싸고 있는 부모요소*/
+.header-help-dropdown-menu {
+  display: flex;
+  position: absolute;
+  width: 250px;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: 3;
+  border-radius: 10px;
+  background: white;
+}
+
+.header-help-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  height: 0;
+  opacity: 0;
+}
+
+.header-help-dropdown-list-h {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header-help-dropdown-list-li {
+  font-size: 12px;
+  padding: 5px;
+  color: gray;
+}
+
+.header-help-dropdown-list-h:hover,
+.header-help-dropdown-list-li:hover {
+  cursor: pointer;
+}
+.header-help-dropdown-list-li:hover {
+  color: black;
+}
+
+.header-right-menu-span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.header-right-menu-span:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.header-left-logo:hover {
+  cursor: pointer;
+}
+
+/*맨 위 헤더부분 여기까지 -------------------------------------------------*/

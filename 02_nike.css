@@ -1,0 +1,758 @@
+@import url(02_nike_header.css);
+@import url(02_nike_header_main.css);
+
+:root {
+  --header-padding: 50px;
+  --font-size-small: 14px;
+  --font-size-large: 24px;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.header-wraper {
+  position: fixed;
+  z-index: 50;
+}
+/*웹 페이지 헤더 고정시키기, 스크롤 다운 이벤트 발생시 사라지게 만들기*/
+
+/*헤더 아래쪽 화면은 여기서부터 ---------------------------------*/
+.main-page-background {
+  position: relative;
+  width: 100dvw;
+  height: auto;
+}
+
+.main-page-opacity-control {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 0;
+  background: black;
+  opacity: 0;
+}
+
+/*헤더 아래쪽 프로모션*/
+.top-promotion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 180px;
+  align-items: center;
+  padding-top: 110px;
+  background: #f5f5f5;
+  line-height: 25px;
+}
+
+.top-promotion-span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.top-promotion-span-link {
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.top-promotion-span-link:hover {
+  cursor: pointer;
+}
+
+/*국가대표 유니폼 프로모션*/
+/*헤더 아래 비디오*/
+.main-page-first-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.first-video {
+  width: 90%;
+  min-width: 1300px;
+}
+
+.main-page-national-team-uniform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+}
+
+.main-page-national-team-uniform-span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.main-page-national-team-uniform > h1 {
+  font-size: 60px;
+  font-weight: bold;
+  padding: 0;
+  margin: 10px;
+}
+
+.main-page-national-team-uniform-shop {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.main-page-national-team-uniform-shop-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 42px;
+  border-radius: 50px;
+  color: white;
+  background: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.main-page-national-team-uniform-shop-btn:hover {
+  cursor: pointer;
+}
+
+/*여름준비신발 프로모션*/
+.main-page-summer-ready-shoes-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.summer-ready-img {
+  width: 90%;
+  height: auto;
+  min-width: 1300px;
+}
+
+.main-page-summer-ready-shose {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+}
+
+.main-page-summer-ready-shose-span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.main-page-summer-ready-shose > h1 {
+  font-size: 60px;
+  font-weight: bold;
+  padding: 0;
+  margin: 10px;
+}
+
+.main-page-summer-ready-shose-shop {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.main-page-summer-ready-shose-shop-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 42px;
+  border-radius: 50px;
+  color: white;
+  background: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.main-page-summer-ready-shose-shop-btn:hover {
+  cursor: pointer;
+}
+
+/*아이코닉 신발 이미지 담는 div, 슬라이더*/
+.main-page-always-iconic-shose-box {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  overflow: hidden; /*이미지 박스 내 스크롤 없애기*/
+  padding-bottom: 80px;
+}
+
+.main-page-always-iconic-shose {
+  display: flex;
+  width: 90%;
+  min-width: 1000px;
+}
+
+.main-page-always-iconic-shose > span {
+  font-size: 24px;
+  font-weight: 500;
+  padding: 15px;
+}
+
+/*이미지 슬라이더 시킬 div요소*/
+.main-page-iconic-shose-img-slider-box {
+  position: relative;
+  width: 350px;
+  height: 328px;
+}
+
+/*이미지가 이동할 때 애니메이션을 줄 ul묶음*/
+.iconic-shose-slider-track {
+  display: flex;
+  transition: 0.5s;
+}
+
+/*플렉스 0 0 225px -> */
+.iconic-shose-img {
+  display: flex;
+  flex: 0 0 250.5px;
+  justify-content: center;
+  align-items: center;
+  height: 310px;
+}
+
+/*각각 이미지의 크기가 아이코닉-슈즈-이미지 부모의 전체 크기만큼*/
+.iconic-shose-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.iconic-shose-img img:hover {
+  cursor: pointer;
+}
+
+.iconic-shose-img-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  top: 10%;
+  border: none;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.iconic-shose-img-indicator.active-indicator {
+  opacity: 1;
+}
+
+/*슬라이더 이미지 양 끝의 버튼*/
+.main-page-iconic-shose-img-slider-left-btn-box {
+  position: absolute;
+  z-index: 4;
+  width: 180px;
+  height: 310px;
+  left: 0;
+  margin-top: 40px;
+}
+
+.main-page-iconic-shose-img-slider-left-btn {
+  position: absolute;
+  z-index: 5;
+  top: 45%;
+  left: 50%;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+}
+
+.main-page-iconic-shose-img-slider-right-btn-box {
+  position: absolute;
+  z-index: 4;
+  width: 180px;
+  height: 310px;
+  right: 0;
+  margin-top: 40px;
+}
+
+.main-page-iconic-shose-img-slider-right-btn {
+  position: absolute;
+  z-index: 5;
+  top: 45%;
+  right: 50%;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+}
+.main-page-iconic-shose-img-slider-left-btn-box:hover,
+.main-page-iconic-shose-img-slider-right-btn-box:hover,
+.main-page-iconic-shose-img-slider-left-btn:hover,
+.main-page-iconic-shose-img-slider-right-btn:hover {
+  cursor: pointer;
+}
+
+/*더 많은 골을 원해*/
+/*두번째 비디오*/
+.main-page-second-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: auto;
+  height: auto;
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+}
+
+.second-video {
+  width: 90%;
+  height: auto;
+  min-width: 1300px;
+}
+
+.main-page-second-video-position {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+}
+
+.main-page-second-video-span {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  color: white;
+}
+
+.phantom-span-one {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.phantom-span-two {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.main-page-second-video:hover {
+  cursor: pointer;
+}
+
+.main-page-more-goal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main-page-more-goal > h1 {
+  font-size: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-page-more-goal-shop {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.main-page-more-goal-shop-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 40px;
+  border-radius: 50px;
+  color: white;
+  background: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.main-page-more-goal-shop-btn:hover {
+  cursor: pointer;
+}
+
+/*나이키 맴버쉽 이미지 슬라이더 부분*/
+.main-page-nike-mambership-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+}
+
+.main-page-nike-mambership-span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.mambership > span {
+  font-size: 18px;
+  font-weight: 500;
+  padding-right: 50px;
+}
+
+.main-page-nike-mambership-left-btn,
+.main-page-nike-mambership-right-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #e5e5e5;
+}
+
+.main-page-nike-mambership-left-btn:hover,
+.main-page-nike-mambership-right-btn:hover {
+  background: #cacacb;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main-page-nike-mambership-img-box {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  padding-bottom: 15px; /*스크롤만큼 패딩 줬다가 없애기*/
+  cursor: pointer;
+}
+
+.main-page-nike-mambership-img-box:hover {
+  padding-bottom: 0px;
+  overflow-x: scroll;
+}
+
+.main-page-nike-mambership-slider-track {
+  display: flex;
+  flex-direction: row;
+  width: fit-content; /*자식 넓이만큼 확장*/
+  height: fit-content;
+  gap: 20px;
+}
+
+.mambership-img {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  min-width: 500px;
+  height: auto; /*축 오버플로우 생기면 이놈 조절해야함*/
+}
+
+.mambership-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*이미지 아래 컨텐츠 부분*/
+.mambership-img-spanbtn {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.mambership-img-spanbtn-span {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.mambership-img-spanbtn > h4 {
+  font-size: 22px;
+  font-weight: 500;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  margin: 0;
+}
+
+.mambership-span-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 125px;
+  background: black;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mambership-span-btn:hover {
+  opacity: 0.7;
+}
+
+/*여기서부터 푸터 부분*/
+/*푸터 메뉴 버튼 감싸는 요소 */
+.footer-menu-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+/*여기에 마우스 호버시 드롭다운*/
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: auto;
+}
+
+/*계속 보여지는 리스트*/
+.footer-menu-list-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-width: 100px;
+  height: auto;
+  padding-bottom: 80px;
+  gap: 120px;
+}
+
+.footer-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/*메뉴에 마우스 호버시 드롭다운 리스트*/
+.footer-menu-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  width: 100%;
+  min-width: 100px;
+  height: 0;
+  gap: 15px;
+  overflow: hidden;
+  background: white;
+}
+
+.footer-menu-featured,
+.footer-menu-shose,
+.footer-menu-clothes,
+.footer-menu-kids {
+  font-size: 16px;
+  font-weight: 600;
+  color: #7c7c7e;
+}
+
+.footer-menu-featured:hover,
+.footer-menu-shose:hover,
+.footer-menu-clothes:hover,
+.footer-menu-kids:hover {
+  cursor: pointer;
+  color: black;
+  transition: 0.3s;
+}
+
+.footer-menu-list-span {
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+/*푸터 메인 내용*/
+.footer-main-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+
+.footer-line {
+  width: 90%;
+  height: 1px;
+  background: #7c7c7e;
+  opacity: 0.3;
+}
+
+.footer-main-content-box {
+  /* display: flex;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 90%;
+  height: auto;
+  gap: 105px;
+}
+
+.footer-main-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  padding-top: 40px;
+  gap: 15px;
+}
+
+.footer-main-content > h3 {
+  font-size: 14px;
+}
+
+.footer-main-content > span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7c7c7e;
+}
+
+.footer-main-content > span:hover {
+  cursor: pointer;
+}
+
+.footer-main-content-korea-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: start;
+  padding-top: 40px;
+  margin: 0;
+}
+
+.footer-main-content-korea {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  min-width: 100px;
+  gap: 5px;
+}
+
+.footer-main-content-korea:hover {
+  cursor: pointer;
+}
+
+.footer-main-content-korea > svg {
+  width: 15px;
+  color: #7c7c7e;
+}
+
+.footer-korea {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7c7c7e;
+}
+
+.footer-content-airback {
+  padding-top: 50px;
+}
+
+.footer-serve-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.footer-serve-content-box {
+  display: flex;
+  justify-content: start;
+  width: 90%;
+}
+
+.footer-serve-content-list {
+  display: flex;
+  gap: 25px;
+  padding-left: 0;
+  padding-bottom: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7c7c7e;
+}
+
+.footer-serve-content-list li:nth-child(3) {
+  font-weight: 900;
+}
+
+.footer-serve-content-list li:not(:first-child):hover {
+  cursor: pointer;
+  color: black;
+}
+
+/*푸터 이용약관, 기업상세정보 표기*/
+.footer-last-content-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-top: var(--header-padding);
+}
+
+.footer-last-content {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: var(--header-padding);
+  gap: 30px;
+}
+
+.footer-last-contet-left {
+  width: 100%;
+  min-width: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7c7c7e;
+}
+
+.u-tag-left:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.footer-last-contet-right {
+  width: 100%;
+  min-width: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7c7c7e;
+}
+
+.u-tag-right:hover {
+  cursor: pointer;
+}
