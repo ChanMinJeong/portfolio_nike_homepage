@@ -1,5 +1,11 @@
 @import url(02_nike_header.css);
 @import url(02_nike_header_main.css);
+@font-face {
+  font-family: "NoToSansKR";
+  src: url("./Noto_Sans_KR/static/NotoSansKR-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 
 :root {
   --header-padding: 50px;
@@ -10,6 +16,7 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  font-family: "NoToSansKR", sans-serif;
 }
 
 * {
@@ -104,7 +111,7 @@ li {
   font-size: 60px;
   font-weight: bold;
   padding: 0;
-  margin: 10px;
+  margin: 0 10px 10px 10px;
 }
 
 .main-page-national-team-uniform-shop {
@@ -163,7 +170,7 @@ li {
   font-size: 60px;
   font-weight: bold;
   padding: 0;
-  margin: 10px;
+  margin: 0px 10px 10px 10px;
 }
 
 .main-page-summer-ready-shose-shop {
@@ -208,7 +215,7 @@ li {
 }
 
 .main-page-always-iconic-shose > span {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
   padding: 15px;
 }
@@ -359,7 +366,7 @@ li {
 }
 
 .phantom-span-two {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 500;
 }
 
@@ -421,7 +428,7 @@ li {
   align-items: center;
   width: 90%;
   height: auto;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
 }
 
@@ -466,6 +473,7 @@ li {
   width: fit-content; /*자식 넓이만큼 확장*/
   height: fit-content;
   gap: 20px;
+  margin-left: 35px;
 }
 
 .mambership-img {
@@ -486,7 +494,7 @@ li {
 .mambership-img-spanbtn {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .mambership-img-spanbtn-span {
@@ -495,10 +503,10 @@ li {
 }
 
 .mambership-img-spanbtn > h4 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
   padding-top: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   margin: 0;
 }
 
